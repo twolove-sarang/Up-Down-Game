@@ -15,19 +15,20 @@
 <body>
   <!-- up&down게임 만들기 -->
   <div class="container">
-    <h1>마시자 마시자 술게임</h1>
+    <h1>마시면서 배우는 술게임</h1>
     <div id="result">
-      결과값이 나옵니다.
+      0부터 100사이 숫자를 입력해 주세요잉~
     </div>
-    <div id=chance>
-      chance : 5
+    <div id="game-section">
+      <div id=chance>
+        남은 찬스 : 5
+      </div>
+      <input id=set-number type="number" placeholder="여기여기" autofocus/>
+      <div id="set-section">
+        <button id=go-button>꼬우!</button>
+        <button id=reset-button>다시하기~~</button>
+      </div>
     </div>
-    <input id=set-number type="text"/>
-    <button id=go-button>go</button>
-    <button id=reset-button>reset</button>
-  </div>
-  <div>
-    code test for git
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

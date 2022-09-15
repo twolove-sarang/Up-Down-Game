@@ -11,6 +11,7 @@
 //input값을 가져오기
 
 let setNumber = document.getElementById("set-number");
+
 let goButton = document.getElementById("go-button");
 let resultText = document.getElementById("result");
 let resetButton = document.getElementById("reset-button");
@@ -43,21 +44,26 @@ function resultContent() {
     }
 
     chance--;
-    chanceText.textContent = `chance : ${chance}`;
+    chanceText.textContent = `남은 찬스 : ${chance}`;
 
     if (inputValue < randomID) {
-      resultText.textContent = "up";
+      resultText.textContent = "더 커요잉~";
     } else if (inputValue > randomID) {
-      resultText.textContent = "down";
+  
+      resultText.textContent = "쪼매 줄이소~";
     } else {
-      resultText.textContent = "correct";
+      resultText.textContent = "정다압!!";
       // gameOver = true;
       goButton.disabled = true;
+    }
+    if(chance==1){
+      document.getElementById("chance").style.color = "red";
+      document.getElementById("game-section").style.border = "2px solid red";
     }
     if (chance == 0) {
       let resetButton = document.getElementById("reset-button");
       goButton.disabled = true;
-      resultText.textContent = "게임이 끝났습니다. 한잔 마셔요!"
+      resultText.textContent = "게임이 끝났습니다. 한잔 마셔요잉!"
     }
 
     // array에 값을 넣고싶다ㅠㅠ
@@ -83,14 +89,16 @@ function resetAll() {
   //변수 하나를 false로 저장,
   //리셋 버튼을 누르면 true값으로 바뀌게 함
 
+  setNumber = '';
+
   //결과값
-  resultText.textContent = "결과값이 나옵니다.";
+  resultText.textContent = "0부터 100사이 숫자를 입력해 주세요잉~";
 
   //찬스 리셋
   //reset버튼을 누르면 chance.textContent가 초기화 v
   //chance 값도 리셋
   chance = 5;
-  chanceText.textContent = "chance : 5";
+  chanceText.textContent = "남은 찬스 : 5";
 
   //랜덤값 리셋
   randomNumber();
@@ -100,10 +108,14 @@ function resetAll() {
   goButton.disabled = false;
 
   //셋넘버 인풋 리셋
-  document.getElementById("set-number").value = ' ';
+  document.getElementById("set-number").value = '';
 
   //arr리셋
   resultArr = [];
+
+  //찬스 컬러 리셋
+  document.getElementById("chance").style.color = "black";
+  document.getElementById("game-section").style.border = "2px solid black";
 
 }
 
