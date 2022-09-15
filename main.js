@@ -50,7 +50,7 @@ function resultContent() {
       resultText.textContent = "더 커요잉~";
     } else if (inputValue > randomID) {
   
-      resultText.textContent = "쪼매 줄이소~";
+      resultText.textContent = "쪼매 줄이셔요~";
     } else {
       resultText.textContent = "정다압!!";
       // gameOver = true;
