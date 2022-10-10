@@ -47,23 +47,23 @@ function resultContent() {
     chanceText.textContent = `남은 찬스 : ${chance}`;
 
     if (inputValue < randomID) {
-      resultText.textContent = "더 커요잉~";
+      resultText.textContent = "Up";
     } else if (inputValue > randomID) {
   
-      resultText.textContent = "쪼매 줄이셔요~";
+      resultText.textContent = "Down";
     } else {
       resultText.textContent = "정다압!!";
       // gameOver = true;
       goButton.disabled = true;
     }
     if(chance==1){
-      document.getElementById("chance").style.color = "red";
-      document.getElementById("game-section").style.border = "2px solid red";
+      // document.getElementById("chance").style.color = "red";
+      // document.getElementById("game-section").style.border = "2px solid red";
     }
     if (chance == 0) {
       let resetButton = document.getElementById("reset-button");
       goButton.disabled = true;
-      resultText.textContent = "게임이 끝났습니다. 한잔 마셔요잉!"
+      resultText.textContent = "게임이 끝났습니다."
     }
 
     // array에 값을 넣고싶다ㅠㅠ
@@ -74,7 +74,7 @@ function resultContent() {
     //resultArr에 있는 값이 중복되면 찬스 차감 안되게하기
     //같은 값을 포함한다..?!
   } else {
-    resultText.textContent = "1부터 100사이 숫자를 넣으시오!";
+    resultText.textContent = "1부터 100사이 숫자를 입력해 주세요";
   }
 }
 
@@ -92,7 +92,7 @@ function resetAll() {
   setNumber = '';
 
   //결과값
-  resultText.textContent = "0부터 100사이 숫자를 입력해 주세요잉~";
+  resultText.textContent = "1부터 100사이 숫자를 입력해 주세요";
 
   //찬스 리셋
   //reset버튼을 누르면 chance.textContent가 초기화 v
@@ -114,20 +114,7 @@ function resetAll() {
   resultArr = [];
 
   //찬스 컬러 리셋
-  document.getElementById("chance").style.color = "black";
-  document.getElementById("game-section").style.border = "2px solid black";
+  // document.getElementById("chance").style.color = "black";
+  // document.getElementById("game-section").style.border = "2px solid black";
 
 }
-
-// function gameSet(){
-//   //gameOver가 되는 조건
-//   //1. 찬스를 다 씀
-//   //2. 답을 맞춤
-//   if(chance < 1){
-//     gameOver = true;
-//   }
-// }
-//1 숫자 맞추면 게임오버
-//2 chance 리셋 v
-//  reset버튼을 누르면 chance.textContent가 초기화 v
-//3 같은값 구분을 위해 arr에 값 넣기 (inputValue다시 들여다보기)
