@@ -103,6 +103,7 @@ function resetAll() {
   //랜덤값 리셋
   randomNumber();
 
+  // 
   //go버튼 언락
   let resetButton = document.getElementById("reset-button");
   goButton.disabled = false;
